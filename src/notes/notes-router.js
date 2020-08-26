@@ -68,7 +68,7 @@ notesRouter
   .get((req, res, next) => {
     res.json(serializeNote(res.note))
   })
-  .delete(jsonParser, (req, res, next) => {
+  .delete((req, res, next) => {
     NotesService.deleteNote(
       req.app.get('db'),
       req.params.note_id
